@@ -17,7 +17,8 @@
     "bootstrap": "^3.3.1",
     "vue-router": "^3.6.5",
     "pubsub-js": "^1.9.4",
-    "nanoid": "^4.0.0"
+    "nanoid": "^4.0.0",
+    "vue-resource": "^1.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

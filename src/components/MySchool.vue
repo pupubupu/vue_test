@@ -6,10 +6,11 @@
     <h1>学生信息</h1>
     <div v-for="(stu,index) in students" :key="index">
       <!--通过父组件给子组件绑定一个自定义事件实现:子给父传递数据-->
-      <MyStudent ref="stu" :name="stu.name" :sex="stu.sex" :age="stu.age" @myevent="demo"></MyStudent>
+      <MyStudent ref="stu" :name="stu.name" :sex="stu.sex" :age="stu.age" @myevent="demo" :aaa = "aaa"></MyStudent>
       <button @click="showName(index)">点我获取vc实例</button>
       <hr/>
       <button @click="demo2">点我发送请求</button>
+      <button @click="aaa = 13">点我</button>
     </div>
   </div>
 </template>
@@ -55,8 +56,8 @@ export default {
           sex:"女",
           age:20
         }
-      ]
-
+      ],
+      aaa: 12
     }
   },
   methods:{
@@ -76,15 +77,21 @@ export default {
       //     console.log(data)
       //   }
       // })
-      axios({
+      this.$http({
         method: "get",
-        url: "http://localhost:8081/ajax",
+        url: "http://localhost:8081/students",
         params:{
           username:"夏洛"
         }
-      }).then(function (res){
-        console.log(res)
+      }).then( success => {
+        console.log(success)
+        console.log(1111)
+      }, error => {
+        console.log(error)
       })
+    },
+    demo3(){
+
     }
   },
   mounted() {

@@ -1,19 +1,15 @@
 <template>
   <div>
-    <ul>
-      <li>消息001</li>
-      <li>消息002</li>
-      <li>消息003</li>
-    </ul>
+    <h1>这儿是首页</h1>
   </div>
 </template>
 
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Message"
+  name: "Welcome",
 }
-</script>;
+</script>
 
 <style scoped>
 
